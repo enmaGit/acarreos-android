@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:id="@+id/btnOfertar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@color/primary_color"
+        android:padding="10dp">
+
+        <com.acarreos.creative.CustomViews.RobotoTextView
+            android:id="@+id/textoHead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/ofertar"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipeRefreshSolicitudes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btnOfertar">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <com.github.rahatarmanahmed.cpv.CircularProgressView
+        android:id="@+id/progressBar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:cpv_animAutostart="true"
+        app:cpv_indeterminate="true" />
+
+    <com.acarreos.creative.CustomViews.RobotoTextView
+        android:id="@+id/txtNoOfertas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/no_ofertas"
+        android:textSize="40sp"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbarLogin"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:background="@drawable/fondo_camion_let"
+    android:minHeight="120dp"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    <com.acarreos.creative.CustomViews.RobotoTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registrate"
+        android:gravity="top"/>
+
+    <com.acarreos.creative.CustomViews.RobotoTextView
+        android:id="@+id/toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="60sp" />
+
+
+</android.support.v7.widget.Toolbar>
+
+

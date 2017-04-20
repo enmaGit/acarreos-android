@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <com.acarreos.creative.CustomViews.RobotoTextView
+        android:id="@+id/headerNuevoEnvio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:text="Nuevo Envio"
+        android:textColor="@color/colorAccent"
+        android:textSize="30dp" />
+
+    <RelativeLayout
+        android:id="@+id/btnAddProducto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headerNuevoEnvio"
+        android:layout_marginBottom="10dp"
+        android:background="@color/primary_color"
+        android:padding="10dp">
+
+        <com.acarreos.creative.CustomViews.RobotoTextView
+            android:id="@+id/textoHead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/add_producto"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnAvanzar"
+        android:layout_below="@+id/btnAddProducto" />
+
+    <RelativeLayout
+        android:id="@id/btnAvanzar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/green"
+        android:padding="10dp">
+
+        <com.acarreos.creative.CustomViews.RobotoTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/siguiente"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

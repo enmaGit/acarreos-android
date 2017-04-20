@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="fill_vertical"
+    android:background="@color/white_infoenvios_back"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardUseCompatPadding="true">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/headerEnvio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/infoEnvio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.dd.ShadowLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        app:sl_cornerRadius="2dp"
+                        app:sl_shadowColor="#AA000000">
+
+                        <TextView
+                            android:id="@+id/textFecha"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/square_corner_white"
+                            android:paddingBottom="2dp"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:paddingTop="2dp"
+                            android:text="15/08/2015" />
+
+
+                    </com.dd.ShadowLayout>
+
+                    <com.dd.ShadowLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dp"
+                        app:sl_cornerRadius="2dp"
+                        app:sl_dx="2dp"
+                        app:sl_dy="2dp"
+                        app:sl_shadowColor="#AA000000">
+
+                        <TextView
+                            android:id="@+id/textEstatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/square_corner_yellow"
+                            android:paddingBottom="2dp"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:paddingTop="2dp"
+                            android:text="SUBASTA"
+                            android:textColor="@color/white" />
+
+                    </com.dd.ShadowLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/headerEnvio"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/icon_trans_flat_gray" />
+
+                        <com.acarreos.creative.CustomViews.RobotoTextView
+                            android:id="@+id/textTransEnvio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="enma21498"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="16dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/icon_user_flat_gray"
+                            android:tint="@color/colorAccent"/>
+
+                        <com.acarreos.creative.CustomViews.RobotoTextView
+                            android:id="@+id/textClienteEnvio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="enma21498"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <com.dd.ShadowLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        app:sl_cornerRadius="2dp"
+                        app:sl_shadowColor="#AA000000">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/square_corner_white"
+                            android:padding="10dp">
+
+                            <android.support.v7.widget.CardView
+                                android:id="@+id/conteDirecciones"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <RelativeLayout
+                                        android:id="@+id/conteDesde"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:padding="10dp">
+
+                                        <ImageView
+                                            android:id="@+id/imgDesde"
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="3dp"
+                                            android:src="@drawable/icon_desde" />
+
+                                        <RelativeLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_toRightOf="@id/imgDesde">
+
+                                            <TextView
+                                                android:id="@+id/txtDesde"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginRight="10dp"
+                                                android:ellipsize="marquee"
+                                                android:marqueeRepeatLimit="marquee_forever"
+                                                android:scrollHorizontally="true"
+                                                android:singleLine="true"
+                                                android:text="San Félix la unidad calle 7-c numero 14" />
+
+                                            <TextView
+                                                android:id="@+id/txtDesdeRef"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@id/txtDesde"
+                                                android:layout_marginRight="10dp"
+                                                android:ellipsize="marquee"
+                                                android:marqueeRepeatLimit="marquee_forever"
+                                                android:scrollHorizontally="true"
+                                                android:singleLine="true"
+                                                android:text="San Félix la unidad calle 7-c numero 14" />
+
+
+                                        </RelativeLayout>
+
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:padding="10dp">
+
+                                        <ImageView
+                                            android:id="@+id/imgHasta"
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="3dp"
+                                            android:src="@drawable/icon_hasta" />
+
+                                        <RelativeLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_toRightOf="@id/imgHasta">
+
+                                            <TextView
+                                                android:id="@+id/txtHasta"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:ellipsize="marquee"
+                                                android:marqueeRepeatLimit="marquee_forever"
+                                                android:scrollHorizontally="true"
+                                                android:singleLine="true"
+                                                android:text="Valencia, Nagua..." />
+
+                                            <TextView
+                                                android:id="@+id/txtHastaRef"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@id/txtHasta"
+                                                android:ellipsize="marquee"
+                                                android:marqueeRepeatLimit="marquee_forever"
+                                                android:scrollHorizontally="true"
+                                                android:singleLine="true"
+                                                android:text="Valencia, Nagua..." />
+
+                                        </RelativeLayout>
+
+
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+
+                            </android.support.v7.widget.CardView>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_below="@id/conteDirecciones"
+                                android:layout_marginTop="10dp">
+
+                                <ImageView
+                                    android:id="@+id/imgDuracion"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="3dp"
+                                    android:src="@drawable/icon_duration" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toRightOf="@id/imgDuracion"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Tiempo requerido:"
+                                        android:textColor="@color/colorAccent"
+                                        android:textSize="10sp" />
+
+                                    <TextView
+                                        android:id="@+id/txtDuracion"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="5 días"
+                                        android:textColor="@color/black"
+                                        android:textSize="15sp" />
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/conteRestante"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_below="@id/conteDirecciones"
+                                android:layout_marginTop="10dp">
+
+                                <ImageView
+                                    android:id="@+id/imgTiempoRest"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="3dp"
+                                    android:src="@drawable/icon_time_gray" />
+
+                                <LinearLayout
+                                    android:id="@+id/tilLogin"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toRightOf="@id/imgTiempoRest"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Vence:"
+                                        android:textColor="@color/colorAccent"
+                                        android:textSize="10sp" />
+
+                                    <TextView
+                                        android:id="@+id/txtRestantePuja"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="5d 4h"
+                                        android:textColor="@color/black"
+                                        android:textSize="10sp" />
+
+                                </LinearLayout>
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/contePref"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/conteRestante"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp">
+
+                                <ImageView
+                                    android:id="@+id/imgProducto1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="10dp"
+                                    android:src="@drawable/ic_work_black_24dp" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toRightOf="@id/imgProducto1"
+                                    android:orientation="vertical">
+
+                                    <com.acarreos.creative.CustomViews.RobotoTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Entregar preferiblemente:"
+                                        android:textColor="@color/colorAccent"
+                                        android:textSize="10sp" />
+
+                                    <com.acarreos.creative.CustomViews.RobotoTextView
+                                        android:id="@+id/txtFechaSug"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="2015/05/05"
+                                        android:textColor="@color/black"
+                                        android:textSize="15sp" />
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/btnCancelarEnvio"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_below="@id/contePref"
+                                android:layout_centerHorizontal="true"
+                                android:layout_gravity="right"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/red"
+                                android:padding="5dp"
+                                android:text="Cancelar Envio"
+                                android:textColor="@color/white"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+
+                    </com.dd.ShadowLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+</android.support.v4.widget.NestedScrollView>

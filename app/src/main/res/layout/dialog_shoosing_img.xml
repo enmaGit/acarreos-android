@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingBottom="16dp"
+    android:paddingLeft="48dp"
+    android:paddingRight="48dp"
+    android:paddingTop="16dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/btnFromGallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgFromGallery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_photo_library_black_48dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imgFromGallery"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:text="Abrir galeria" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btnTakePic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/btnFromGallery">
+
+            <ImageView
+                android:id="@+id/imgFromCamera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_add_a_photo_black_48dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imgFromCamera"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:text="Tomar foto" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

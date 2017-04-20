@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardUseCompatPadding="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imgTrans"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/icon_trans_flat_gray" />
+
+                <com.acarreos.creative.CustomViews.RobotoTextView
+                    android:id="@+id/txtLoginTrans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/imgTrans"
+                    android:text="trans123"
+                    android:textSize="20sp" />
+
+                <com.dd.ShadowLayout
+                    android:id="@+id/btnAceptarOferta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="gone"
+                    app:sl_cornerRadius="2dp"
+                    app:sl_dx="2dp"
+                    app:sl_dy="2dp"
+                    app:sl_shadowColor="#AA000000">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/square_corner_blue"
+                        android:paddingBottom="2dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="2dp"
+                        android:text="Aceptar"
+                        android:textColor="@color/white" />
+
+                </com.dd.ShadowLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp">
+
+                <TextView
+                    android:id="@+id/textFechaPub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/square_corner_white"
+                    android:text="15/08/2015" />
+
+                <com.acarreos.creative.CustomViews.RobotoTextView
+                    android:id="@+id/textPrecioPuja"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/textFechaPub"
+                    android:text="300$"
+                    android:textColor="@color/colorAccent" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    card_view:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <com.acarreos.creative.CustomViews.RobotoTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/salida" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/imgProducto1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="10dp"
+                                    android:src="@drawable/ic_work_black_24dp" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toRightOf="@id/imgProducto1"
+                                    android:orientation="vertical">
+
+                                    <com.acarreos.creative.CustomViews.RobotoTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/fecha"
+                                        android:textColor="@color/colorAccent"
+                                        android:textSize="10sp" />
+
+                                    <com.acarreos.creative.CustomViews.RobotoTextView
+                                        android:id="@+id/txtFechaSalida"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="2015/05/05"
+                                        android:textColor="@color/black"
+                                        android:textSize="15sp" />
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true">
+
+                                <ImageView
+                                    android:id="@+id/imgProducto2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="10dp"
+                                    android:src="@drawable/ic_work_black_24dp" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toRightOf="@id/imgProducto2"
+                                    android:orientation="vertical">
+
+                                    <com.acarreos.creative.CustomViews.RobotoTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/hora"
+                                        android:textColor="@color/colorAccent"
+                                        android:textSize="10sp" />
+
+                                    <com.acarreos.creative.CustomViews.RobotoTextView
+                                        android:id="@+id/horaSalida"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="9:00"
+                                        android:textColor="@color/black"
+                                        android:textSize="15sp" />
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    card_view:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <com.acarreos.creative.CustomViews.RobotoTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/llegada" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/imgProducto3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="10dp"
+                                    android:src="@drawable/ic_work_black_24dp" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toRightOf="@id/imgProducto3"
+                                    android:orientation="vertical">
+
+                                    <com.acarreos.creative.CustomViews.RobotoTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/fecha"
+                                        android:textColor="@color/colorAccent"
+                                        android:textSize="10sp" />
+
+                                    <com.acarreos.creative.CustomViews.RobotoTextView
+                                        android:id="@+id/txtFechaLlegada"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="2015/05/05"
+                                        android:textColor="@color/black"
+                                        android:textSize="15sp" />
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true">
+
+                                <ImageView
+                                    android:id="@+id/imgProducto4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="10dp"
+                                    android:src="@drawable/ic_work_black_24dp" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toRightOf="@id/imgProducto4"
+                                    android:orientation="vertical">
+
+                                    <com.acarreos.creative.CustomViews.RobotoTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/hora"
+                                        android:textColor="@color/colorAccent"
+                                        android:textSize="10sp" />
+
+                                    <com.acarreos.creative.CustomViews.RobotoTextView
+                                        android:id="@+id/horaLlegada"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="9:00"
+                                        android:textColor="@color/black"
+                                        android:textSize="15sp" />
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/ctlLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/fondo_material"
+                app:layout_collapseMode="parallax" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_collapseMode="pin"
+                app:titleTextAppearance="@style/ToolbarTitle" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <fr.ganfra.materialspinner.MaterialSpinner
+            android:id="@+id/spinnerCategoria"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            app:ms_alignLabels="false"
+            app:ms_arrowColor="@color/colorPrimary"
+            app:ms_arrowSize="16dp"
+            app:ms_baseColor="@color/black"
+            app:ms_errorColor="@color/red"
+            app:ms_floatingLabelColor="@color/colorAccent"
+            app:ms_floatingLabelText="Categoría"
+            app:ms_highlightColor="@color/green"
+            app:ms_hint="Escoja categoría de producto"
+            app:ms_multiline="false" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/tilComision"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp">
+
+                <EditText
+                    android:id="@+id/textComision"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/apptheme_edit_text_holo_light"
+                    android:hint="Comisión"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/black" />
+
+            </android.support.design.widget.TextInputLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btnSaveComision"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/primary_color"
+            android:padding="10dp">
+
+            <com.acarreos.creative.CustomViews.RobotoTextView
+                android:id="@+id/textoHead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/guardar"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

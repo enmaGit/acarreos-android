@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_id": "mapas-api-v2-1061",
+    "project_number": "140209187753",
+    "name": "Mapas API v2"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:140209187753:android:79e34822ffc77cd9",
+        "client_id": "android:com.acarreos.creative",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "com.acarreos.creative"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [{ "current_key": "" }],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "cloud_messaging_service": {
+          "status": 2,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 1
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
+}

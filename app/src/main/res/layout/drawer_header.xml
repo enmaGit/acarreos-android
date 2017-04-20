@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:alpha="0.8"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo_drawer_header" />
+
+    <com.acarreos.creative.CustomViews.RobotoTextView
+        android:id="@+id/nombreUser"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="left"
+        android:padding="16dp"
+        android:text="Enmanuel Carrasquel"
+        android:textColor="@color/dark_gray" />
+
+</FrameLayout>

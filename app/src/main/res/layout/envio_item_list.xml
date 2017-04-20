@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white_infoenvios_back"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/headerEnvio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/infoEnvio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.dd.ShadowLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        app:sl_cornerRadius="2dp"
+                        app:sl_shadowColor="#AA000000">
+
+                        <TextView
+                            android:id="@+id/textFecha"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/square_corner_white"
+                            android:paddingBottom="2dp"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:paddingTop="2dp"
+                            android:text="15/08/2015" />
+
+
+                    </com.dd.ShadowLayout>
+
+                    <com.dd.ShadowLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dp"
+                        app:sl_cornerRadius="2dp"
+                        app:sl_dx="2dp"
+                        app:sl_dy="2dp"
+                        app:sl_shadowColor="#AA000000">
+
+                        <TextView
+                            android:id="@+id/textEstatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/square_corner_yellow"
+                            android:paddingBottom="2dp"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:paddingTop="2dp"
+                            android:text="SUBASTA"
+                            android:textColor="@color/white" />
+
+                    </com.dd.ShadowLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/infoEnvio"
+                    android:background="@drawable/degradado_base"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/txtDescripcion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Carro TrailBlazer"
+                        android:textColor="@color/white_letter_envio"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/headerEnvio"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
+                        android:tint="@color/colorAccent"
+                        android:src="@drawable/icon_user_flat_orange" />
+
+                    <TextView
+                        android:id="@+id/textUserEnvio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="enma21498"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="22sp" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp">
+
+                    <com.dd.ShadowLayout
+                        android:id="@+id/btnDetalle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        app:sl_cornerRadius="2dp"
+                        app:sl_dx="2dp"
+                        app:sl_dy="2dp"
+                        app:sl_shadowColor="#AA000000">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/square_corner_blue"
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:paddingTop="5dp"
+                            android:text="Ver Detalles"
+                            android:textColor="@color/white" />
+
+                    </com.dd.ShadowLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/contenedorInfoUbicacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <com.dd.ShadowLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        app:sl_cornerRadius="2dp"
+                        app:sl_shadowColor="#AA000000">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/square_corner_white"
+                            android:padding="10dp">
+
+                            <android.support.v7.widget.CardView
+                                android:id="@+id/conteUbicacion"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true">
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="10dp">
+
+                                    <RelativeLayout
+                                        android:id="@+id/conteInfoOrigen"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp">
+
+                                        <ImageView
+                                            android:id="@+id/imgDesde"
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="3dp"
+                                            android:src="@drawable/icon_desde" />
+
+                                        <RelativeLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_toRightOf="@id/imgDesde">
+
+                                            <TextView
+                                                android:id="@+id/txtDesde"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginRight="10dp"
+                                                android:ellipsize="marquee"
+                                                android:marqueeRepeatLimit="marquee_forever"
+                                                android:scrollHorizontally="true"
+                                                android:singleLine="true"
+                                                android:text="San Félix la unidad calle 7-c numero 14" />
+
+                                            <TextView
+                                                android:id="@+id/txtDesdeRef"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@id/txtDesde"
+                                                android:layout_marginRight="10dp"
+                                                android:ellipsize="marquee"
+                                                android:marqueeRepeatLimit="marquee_forever"
+                                                android:scrollHorizontally="true"
+                                                android:singleLine="true"
+                                                android:text="San Félix la unidad calle 7-c numero 14" />
+
+
+                                        </RelativeLayout>
+
+
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:id="@+id/conteInfoDestino"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@id/conteInfoOrigen">
+
+                                        <ImageView
+                                            android:id="@+id/imgHasta"
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="3dp"
+                                            android:src="@drawable/icon_hasta" />
+
+                                        <RelativeLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_toRightOf="@id/imgHasta">
+
+                                            <TextView
+                                                android:id="@+id/txtHasta"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:ellipsize="marquee"
+                                                android:marqueeRepeatLimit="marquee_forever"
+                                                android:scrollHorizontally="true"
+                                                android:singleLine="true"
+                                                android:text="Valencia, Nagua..." />
+
+                                            <TextView
+                                                android:id="@+id/txtHastaRef"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@id/txtHasta"
+                                                android:ellipsize="marquee"
+                                                android:marqueeRepeatLimit="marquee_forever"
+                                                android:scrollHorizontally="true"
+                                                android:singleLine="true"
+                                                android:text="Valencia, Nagua..." />
+
+                                        </RelativeLayout>
+
+                                    </RelativeLayout>
+
+                                </RelativeLayout>
+
+                            </android.support.v7.widget.CardView>
+
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/conteUbicacion"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="5dp">
+
+                                <ImageView
+                                    android:id="@+id/imgDuracion"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="3dp"
+                                    android:src="@drawable/icon_duration" />
+
+                                <TextView
+                                    android:id="@+id/txtDuracion"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toRightOf="@id/imgDuracion"
+                                    android:text="5 dias"
+                                    android:textSize="15sp" />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </com.dd.ShadowLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/contenedorInfoOfertas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <com.dd.ShadowLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        app:sl_cornerRadius="2dp"
+                        app:sl_shadowColor="#AA000000">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/square_corner_green">
+
+                            <RelativeLayout
+                                android:id="@+id/headerPuja"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:text="Mejor Puja"
+                                    android:textColor="@color/white" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Vence:"
+                                        android:textColor="@color/white" />
+
+                                    <TextView
+                                        android:id="@+id/txtRestantePuja"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="5d 4h"
+                                        android:textColor="@color/white" />
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/infoMejorPuja"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/headerPuja">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="10dp"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/txtPrecioMejor"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginRight="25dp"
+                                        android:text="$15000"
+                                        android:textColor="@color/white"
+                                        android:textSize="20sp" />
+
+                                    <ImageView
+                                        android:id="@+id/imgUser"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_marginRight="5dp"
+                                        android:src="@drawable/icon_user_flat_white" />
+
+                                    <TextView
+                                        android:id="@+id/txtUserPuja"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="ngonzalez"
+                                        android:textColor="@color/white"
+                                        android:textSize="20sp" />
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                            <com.dd.ShadowLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/infoMejorPuja"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="8dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/btnOfertar"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/square_corner_white"
+                                    android:paddingBottom="5dp"
+                                    android:paddingLeft="15dp"
+                                    android:paddingRight="15dp"
+                                    android:paddingTop="5dp">
+
+                                    <TextView
+                                        android:id="@+id/labelTxtOfertar"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/ofertar" />
+
+                                </RelativeLayout>
+
+                            </com.dd.ShadowLayout>
+
+
+                        </RelativeLayout>
+
+                    </com.dd.ShadowLayout>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/contenedorBtnDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:weightSum="1">
+
+                    <com.dd.ShadowLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_weight="0.3"
+                        app:sl_cornerRadius="2dp"
+                        app:sl_shadowColor="#AA000000">
+
+                        <TextView
+                            android:id="@+id/btnVerProductos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/square_corner_blue"
+                            android:gravity="center"
+                            android:paddingBottom="5dp"
+                            android:paddingTop="5dp"
+                            android:text="PRODUCTOS"
+                            android:textColor="@color/white" />
+
+                    </com.dd.ShadowLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.4" />
+
+                    <com.dd.ShadowLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_weight="0.3"
+                        app:sl_cornerRadius="2dp"
+                        app:sl_shadowColor="#AA000000">
+
+                        <TextView
+                            android:id="@+id/btnVerPujas"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/square_corner_blue"
+                            android:gravity="center"
+                            android:paddingBottom="5dp"
+                            android:paddingTop="5dp"
+                            android:text="PUJAS"
+                            android:textColor="@color/white" />
+
+                    </com.dd.ShadowLayout>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.dd.ShadowLayout
+                        android:id="@+id/btnValorar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="5dp"
+                        android:visibility="gone"
+                        app:sl_cornerRadius="2dp"
+                        app:sl_dx="2dp"
+                        app:sl_dy="2dp"
+                        app:sl_shadowColor="#AA000000">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/square_corner_blue"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="25dp"
+                            android:paddingRight="25dp"
+                            android:paddingTop="10dp"
+                            android:text="Valorar"
+                            android:textColor="@color/white" />
+
+                    </com.dd.ShadowLayout>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

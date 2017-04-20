@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/primary_color">
+
+        <ImageView
+            android:id="@+id/btnClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/abc_ic_clear_mtrl_alpha" />
+
+        <TextView
+            android:id="@+id/titleBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="72dp"
+            android:text="Nuevo Usuario"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/btnRegistrar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:text="REGISTRAR"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@drawable/shadow_bottom" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <com.acarreos.creative.CustomViews.RadioButtonMaterial
+                    android:id="@+id/rbtOpcCliente"
+                    style="@style/carbon_RadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginRight="20dp"
+                    android:checked="true"
+                    android:gravity="center_vertical"
+                    android:text="@string/cliente"
+                    android:textSize="20sp" />
+
+                <com.acarreos.creative.CustomViews.RadioButtonMaterial
+                    android:id="@+id/rbtOpcTranspor"
+                    style="@style/carbon_RadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/transportista"
+                    android:textSize="20sp" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_person_black_24dp" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tilLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp">
+
+                    <EditText
+                        android:id="@+id/textLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/apptheme_edit_text_holo_light"
+                        android:hint="@string/login_form" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_lock_black_24dp" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tilPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp">
+
+                    <EditText
+                        android:id="@+id/textPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/apptheme_edit_text_holo_light"
+                        android:hint="@string/pass_form"
+                        android:inputType="textPassword" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_lock_black_24dp" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tilPasswordRentered"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp">
+
+                    <EditText
+                        android:id="@+id/textPasswordRentered"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/apptheme_edit_text_holo_light"
+                        android:hint="@string/re_enter_pass"
+                        android:inputType="textPassword" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_format_list_bulleted_black_24dp" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tilNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp">
+
+                    <EditText
+                        android:id="@+id/textNombre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/apptheme_edit_text_holo_light"
+                        android:hint="@string/nombre"
+                        android:textColorHighlight="@color/black"
+                        android:theme="@style/MyEditTextTheme" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_format_list_bulleted_black_24dp" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tilApellido"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp">
+
+                    <EditText
+                        android:id="@+id/textApellido"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/apptheme_edit_text_holo_light"
+                        android:hint="@string/apellido" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_person_black_24dp" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <fr.ganfra.materialspinner.MaterialSpinner
+                        android:id="@+id/spinnerTipoDni"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        app:ms_alignLabels="false"
+                        app:ms_arrowColor="@color/colorPrimary"
+                        app:ms_arrowSize="16dp"
+                        app:ms_baseColor="@color/gray_box"
+                        app:ms_errorColor="@color/red"
+                        app:ms_floatingLabelColor="@color/colorAccent"
+                        app:ms_floatingLabelText="@string/tipo_dni"
+                        app:ms_highlightColor="@color/green"
+                        app:ms_hint="@string/tipo_dni"
+                        app:ms_multiline="false" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_person_black_24dp" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tilDni"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp">
+
+                    <EditText
+                        android:id="@+id/textDni"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/apptheme_edit_text_holo_light"
+                        android:hint="Identificación" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_person_black_24dp" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <fr.ganfra.materialspinner.MaterialSpinner
+                        android:id="@+id/spinnerTipoLicencia"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        app:ms_alignLabels="false"
+                        app:ms_arrowColor="@color/colorPrimary"
+                        app:ms_arrowSize="16dp"
+                        app:ms_baseColor="@color/gray_box"
+                        app:ms_errorColor="@color/red"
+                        app:ms_floatingLabelColor="@color/colorAccent"
+                        app:ms_floatingLabelText="@string/tipo_licencia"
+                        app:ms_highlightColor="@color/green"
+                        app:ms_hint="@string/tipo_licencia"
+                        app:ms_multiline="false" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_person_black_24dp" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tilNumSeguridad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
+                        android:layout_toLeftOf="@+id/btnHelpNumSeg">
+
+                        <EditText
+                            android:id="@+id/textNumSeguridad"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/apptheme_edit_text_holo_light"
+                            android:hint="@string/num_seguridad" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <ImageView
+                        android:id="@id/btnHelpNumSeg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_help_outline_black_24dp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_email_black_24dp" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tilEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp">
+
+                    <EditText
+                        android:id="@+id/textEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/apptheme_edit_text_holo_light"
+                        android:hint="@string/email" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_today_black_24dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tilFecNac"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/textFecNac"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/apptheme_edit_text_holo_light"
+                            android:editable="false"
+                            android:hint="@string/fecha_nacimiento" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <ImageView
+                        android:id="@+id/iconCalendar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_expand_more_black_24dp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_phone_black_24dp" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tilTelefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp">
+
+                    <EditText
+                        android:id="@+id/textTelefono"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/apptheme_edit_text_holo_light"
+                        android:hint="@string/telefono"
+                        android:inputType="number" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

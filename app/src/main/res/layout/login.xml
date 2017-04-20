@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6">
+
+            <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/toolbarLogin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/fondo_login"
+                android:elevation="2dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/degradado_base" />
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.Toolbar>
+
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/viewB"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="50dp">
+
+                <RelativeLayout
+                    android:id="@+id/boxUserText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/fondo_box_login">
+
+                    <EditText
+                        android:id="@+id/userLoginEdit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="23dp"
+                        android:layout_toLeftOf="@+id/iconUser"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/login"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:nextFocusDown="@+id/passLoginEdit"
+                        android:selectAllOnFocus="true"
+                        android:singleLine="true"
+                        android:textColor="@color/dark_gray"
+                        android:textColorHint="@color/gray_text"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@id/iconUser"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:tint="@color/gray_icon"
+                        android:src="@drawable/icon_user_flat_gray" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/boxPassText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/boxUserText"
+                    android:background="@drawable/fondo_box_login">
+
+                    <EditText
+                        android:id="@+id/passLoginEdit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="23dp"
+                        android:layout_toLeftOf="@+id/iconPass"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/hint_pass_login"
+                        android:inputType="textPassword"
+                        android:selectAllOnFocus="true"
+                        android:textColor="@color/dark_gray"
+                        android:textColorHint="@color/gray_text"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@id/iconPass"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/icon_candado_flat_gray" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/primary_color"
+                android:padding="10dp">
+
+                <com.acarreos.creative.CustomViews.RobotoTextView
+                    android:id="@+id/textoHead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/login"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.acarreos.creative.CustomViews.RobotoTextView
+                    android:id="@+id/btnPassForget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:text="Olvidaste tu Contraseña"
+                    android:textColor="@color/gray_text"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:src="@drawable/icon_register_flat"
+        app:borderWidth="0dp"
+        app:layout_anchor="@id/toolbarLogin"
+        app:layout_anchorGravity="bottom|right|end" />
+
+
+</android.support.design.widget.CoordinatorLayout>

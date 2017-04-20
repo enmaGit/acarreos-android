@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/imgProducto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_assignment_returned_black_24dp" />
+
+            <LinearLayout
+                android:id="@+id/infoConte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/imgProducto"
+                android:orientation="vertical">
+
+                <com.acarreos.creative.CustomViews.RobotoTextView
+                    android:id="@+id/txtLoginUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="enma21498"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="10sp" />
+
+                <com.acarreos.creative.CustomViews.RobotoTextView
+                    android:id="@+id/txtDescripcion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cosas de mi casa"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <RatingBar
+                    android:id="@+id/ratingEnvio"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:stepSize="1" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true">
+
+                <com.dd.ShadowLayout
+                    android:id="@+id/btnDetalle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    app:sl_cornerRadius="2dp"
+                    app:sl_dx="2dp"
+                    app:sl_dy="2dp"
+                    app:sl_shadowColor="#AA000000">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/square_corner_blue"
+                        android:paddingBottom="2dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="2dp"
+                        android:text="Detalles"
+                        android:textColor="@color/white" />
+
+                </com.dd.ShadowLayout>
+
+                <com.dd.ShadowLayout
+                    android:id="@+id/btnFinalizar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btnDetalle"
+                    android:layout_centerHorizontal="true"
+                    app:sl_cornerRadius="2dp"
+                    app:sl_dx="2dp"
+                    app:sl_dy="2dp"
+                    app:sl_shadowColor="#AA000000">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/square_corner_red"
+                        android:paddingBottom="2dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="2dp"
+                        android:text="Avisar entrega"
+                        android:textColor="@color/white" />
+
+                </com.dd.ShadowLayout>
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

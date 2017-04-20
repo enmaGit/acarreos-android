@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <com.acarreos.creative.CustomViews.RobotoTextView
+        android:id="@+id/headerNuevoEnvio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="Nuevo Envio"
+        android:textColor="@color/colorAccent"
+        android:textSize="20dp" />
+
+    <View
+        android:id="@+id/separador"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/headerNuevoEnvio"
+        android:layout_marginBottom="16dp"
+        android:background="@color/gray_box" />
+
+    <LinearLayout
+        android:id="@+id/footerNuevoEnvio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <com.acarreos.creative.CustomViews.RobotoTextView
+            android:id="@+id/btnCancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:text="@string/cancelar"
+            android:textColor="@color/colorAccent"
+            android:textSize="20dp" />
+
+        <com.acarreos.creative.CustomViews.RobotoTextView
+            android:id="@+id/btnGuardar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/guardar"
+            android:textColor="@color/primary_color"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/footerNuevoEnvio"
+        android:layout_below="@id/separador">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/tilTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp">
+
+                <EditText
+                    android:id="@+id/textTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/apptheme_edit_text_holo_light"
+                    android:hint="@string/titulo"
+                    android:lines="1"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:orientation="vertical">
+
+                <com.acarreos.creative.CustomViews.RobotoTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/desde"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tilDesde"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/textDesde"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/apptheme_edit_text_holo_light"
+                            android:focusable="false"
+                            android:hint="@string/posicion"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <ImageView
+                        android:id="@+id/btnDesdeUbi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_place_black_24dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tilDesdeRef"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/textDesdeRef"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/apptheme_edit_text_holo_light"
+                            android:hint="@string/reference_dir"
+                            android:lines="2"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:orientation="vertical">
+
+                <com.acarreos.creative.CustomViews.RobotoTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hasta"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tilHasta"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/textHasta"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/apptheme_edit_text_holo_light"
+                            android:focusable="false"
+                            android:hint="@string/posicion"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <ImageView
+                        android:id="@+id/btnHastaUbi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_place_black_24dp" />
+
+                </RelativeLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tilHastaRef"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/textHastaRef"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/apptheme_edit_text_holo_light"
+                        android:hint="@string/reference_dir"
+                        android:lines="2"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_today_black_24dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tilFecSugEntrega"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/textFecSugEntrega"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/apptheme_edit_text_holo_light"
+                            android:editable="false"
+                            android:hint="@string/sugerencia"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <ImageView
+                        android:id="@+id/btnOpenCalSug"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_expand_more_black_24dp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_today_black_24dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tilHoraSugEntrega"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/textHoraSugEntrega"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/apptheme_edit_text_holo_light"
+                            android:editable="false"
+                            android:hint="@string/sugerencia_hora"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <ImageView
+                        android:id="@+id/btnOpenTimeSug"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_expand_more_black_24dp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/tilMaxDias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp">
+
+                <EditText
+                    android:id="@+id/textMaxDias"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/apptheme_edit_text_holo_light"
+                    android:hint="@string/max_dias"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <com.acarreos.creative.CustomViews.RobotoTextView
+                android:id="@+id/txtCantTransSelected"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textSize="15sp" />
+
+            <fr.ganfra.materialspinner.MaterialSpinner
+                android:id="@+id/spinnerTipoTransporte"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                app:ms_alignLabels="false"
+                app:ms_arrowColor="@color/colorPrimary"
+                app:ms_arrowSize="16dp"
+                app:ms_baseColor="@color/gray_box"
+                app:ms_errorColor="@color/red"
+                app:ms_floatingLabelColor="@color/colorAccent"
+                app:ms_floatingLabelText="Ti"
+                app:ms_highlightColor="@color/green"
+                app:ms_hint="@string/tipo_trans"
+                app:ms_multiline="false" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>
