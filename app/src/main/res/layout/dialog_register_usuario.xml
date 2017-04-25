@@ -107,7 +107,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/apptheme_edit_text_holo_light"
-                        android:hint="@string/login_form" />
+                        android:hint="@string/login_form"
+                        android:maxLines="1" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -136,7 +137,8 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/apptheme_edit_text_holo_light"
                         android:hint="@string/pass_form"
-                        android:inputType="textPassword" />
+                        android:inputType="textPassword"
+                        android:maxLines="1" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -165,7 +167,8 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/apptheme_edit_text_holo_light"
                         android:hint="@string/re_enter_pass"
-                        android:inputType="textPassword" />
+                        android:inputType="textPassword"
+                        android:maxLines="1" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -194,6 +197,7 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/apptheme_edit_text_holo_light"
                         android:hint="@string/nombre"
+                        android:maxLines="1"
                         android:textColorHighlight="@color/black"
                         android:theme="@style/MyEditTextTheme" />
 
@@ -223,7 +227,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/apptheme_edit_text_holo_light"
-                        android:hint="@string/apellido" />
+                        android:hint="@string/apellido"
+                        android:maxLines="1" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -285,7 +290,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/apptheme_edit_text_holo_light"
-                        android:hint="Identificación" />
+                        android:hint="Identificación"
+                        android:maxLines="1" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -352,7 +358,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/apptheme_edit_text_holo_light"
-                            android:hint="@string/num_seguridad" />
+                            android:hint="@string/num_seguridad"
+                            android:maxLines="1" />
 
                     </android.support.design.widget.TextInputLayout>
 
@@ -390,7 +397,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/apptheme_edit_text_holo_light"
-                        android:hint="@string/email" />
+                        android:hint="@string/email"
+                        android:maxLines="1" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -462,7 +470,8 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/apptheme_edit_text_holo_light"
                         android:hint="@string/telefono"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:maxLines="1" />
 
                 </android.support.design.widget.TextInputLayout>
 

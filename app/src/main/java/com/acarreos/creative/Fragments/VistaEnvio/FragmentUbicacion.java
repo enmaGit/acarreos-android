@@ -209,6 +209,7 @@ public class FragmentUbicacion extends SupportMapFragment implements OnMapReadyC
     }
 
     private void activarCargaContinua() {
+        Toast.makeText(getActivity(), "Ya puedes ver los envíos en tu ruta en morado", Toast.LENGTH_SHORT).show();
         paginasSolicitar = 0;
         cargaContActive = true;
         obtenerEnviosTranspor();
@@ -216,6 +217,7 @@ public class FragmentUbicacion extends SupportMapFragment implements OnMapReadyC
 
     private void desactivarCargaContinua() {
         cargaContActive = false;
+        Toast.makeText(getActivity(), "Desactivando carga continua", Toast.LENGTH_SHORT).show();
         if (googleMapFragment != null) {
             for (Marker marker : markers) {
                 String titleId = marker.getTitle();
@@ -297,6 +299,7 @@ public class FragmentUbicacion extends SupportMapFragment implements OnMapReadyC
     public boolean onMarkerClick(Marker marker) {
         String titleId = marker.getTitle();
         int id = Integer.getInteger(titleId, -1);
+        Log.e("Revisar", "Se dio click a un marker: " + id + " - " + titleId);
         if (id >= 0) {
             BaseActivity activityPadre = (BaseActivity) getActivity();
             activityPadre.abrirDetalleEnvio(envioInfo, PagerDetalleEnviosAdapter.PESTAÑA_INFORMACION, false);

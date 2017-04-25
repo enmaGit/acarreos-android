@@ -5,9 +5,9 @@ package com.acarreos.creative.Constants;
  */
 public class UrlsServer {
 
-    public static String RUTA_SERVER = "http://acarreospanama.info/api/v1";
+    public static String RUTA_SERVER = "https://acarreos.herokuapp.com/api/v1";
 
-    public static String RUTA_SERVER_RESET = "http://acarreospanama.info";
+    public static String RUTA_SERVER_RESET = "https://acarreos.herokuapp.com";
 
     public final static String LOGIN = "/auth/login";
 

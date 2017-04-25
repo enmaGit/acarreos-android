@@ -11,7 +11,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="16dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <com.acarreos.creative.CustomViews.RobotoTextView
             android:layout_width="wrap_content"
@@ -25,18 +26,5 @@
             android:src="@drawable/ic_gps_fixed_white_24dp" />
 
     </LinearLayout>
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/btnCargaContActive"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:src="@drawable/ic_envios_menu"
-        app:borderWidth="0dp"
-        android:layout_marginRight="25dp"
-        android:layout_alignBottom="@+id/btnActPos"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="25dp" />
 
 </RelativeLayout>
