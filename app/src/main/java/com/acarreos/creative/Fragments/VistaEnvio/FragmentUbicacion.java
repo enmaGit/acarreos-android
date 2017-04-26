@@ -56,12 +56,14 @@ public class FragmentUbicacion extends SupportMapFragment implements OnMapReadyC
     public int paginasSolicitar;
     GoogleMap googleMapFragment;
     Activity activityPadre;
+    ArrayList<EnvioModel> listaDeEnvios;
 
 
     public static FragmentUbicacion newInstance(EnvioModel envioInfo) {
         FragmentUbicacion fragment = new FragmentUbicacion();
         fragment.envioInfo = envioInfo;
         fragment.markers = new ArrayList<>();
+        fragment.listaDeEnvios = new ArrayList<>();
         fragment.cargaContActive = false;
         fragment.paginasSolicitar = 0;
         fragment.googleMapFragment = null;
@@ -263,6 +265,7 @@ public class FragmentUbicacion extends SupportMapFragment implements OnMapReadyC
                     Toast.makeText(getActivity(), "No hay envíos para Carga Continua", Toast.LENGTH_SHORT).show();
                 } else {
                     for (EnvioModel envioInfo : listaDeEnviosServer) {
+                        listaDeEnvios.add(envioInfo);
                         addMarkerEnvio(envioInfo);
                     }
                 }
@@ -284,6 +287,15 @@ public class FragmentUbicacion extends SupportMapFragment implements OnMapReadyC
         });
     }
 
+    private EnvioModel getEnvioFromList(int id) {
+        for (EnvioModel envioModel : listaDeEnvios) {
+            if (envioModel.getId() == id) {
+                return envioModel;
+            }
+        }
+        return null;
+    }
+
     private void addMarkerEnvio(EnvioModel envioInfo) {
         if (googleMapFragment != null) {
             LatLng origen = new LatLng(envioInfo.lat_origen, envioInfo.lon_origen);
@@ -295,14 +307,23 @@ public class FragmentUbicacion extends SupportMapFragment implements OnMapReadyC
         }
     }
 
+    int tryParseInt(String value) {
+        try {
+            return Integer.parseInt(value);
+        } catch (NumberFormatException nfe) {
+            // Log exception.
+            return -1;
+        }
+    }
+
     @Override
     public boolean onMarkerClick(Marker marker) {
         String titleId = marker.getTitle();
-        int id = Integer.getInteger(titleId, -1);
+        int id = tryParseInt(titleId);
         Log.e("Revisar", "Se dio click a un marker: " + id + " - " + titleId);
         if (id >= 0) {
             BaseActivity activityPadre = (BaseActivity) getActivity();
-            activityPadre.abrirDetalleEnvio(envioInfo, PagerDetalleEnviosAdapter.PESTAÑA_INFORMACION, false);
+            activityPadre.abrirDetalleEnvio(getEnvioFromList(id), PagerDetalleEnviosAdapter.PESTAÑA_INFORMACION, false);
             return true;
         }
         return false;
