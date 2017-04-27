@@ -223,7 +223,7 @@ public class FragmentUbicacion extends SupportMapFragment implements OnMapReadyC
         if (googleMapFragment != null) {
             for (Marker marker : markers) {
                 String titleId = marker.getTitle();
-                int id = Integer.getInteger(titleId, -1);
+                int id = tryParseInt(titleId);
                 if (id >= 0) {
                     marker.remove();
                 }
