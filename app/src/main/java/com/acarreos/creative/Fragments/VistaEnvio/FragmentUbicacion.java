@@ -107,7 +107,11 @@ public class FragmentUbicacion extends SupportMapFragment implements OnMapReadyC
                 .icon(BitmapDescriptorFactory.defaultMarker(COLOR_AZUL))));
         LatLngBounds.Builder builder = new LatLngBounds.Builder();
         for (Marker marker : markers) {
-            builder.include(marker.getPosition());
+            String titleId = marker.getTitle();
+            int id = tryParseInt(titleId);
+            if (id < 0) {
+                builder.include(marker.getPosition());
+            }
         }
         LatLngBounds bounds = builder.build();
         int padding = PADDING_MARKER; // offset from edges of the map in pixels
