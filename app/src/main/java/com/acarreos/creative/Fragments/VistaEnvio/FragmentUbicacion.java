@@ -120,6 +120,9 @@ public class FragmentUbicacion extends SupportMapFragment implements OnMapReadyC
         if (envioInfo.getEstatus().getId() == EnvioModel.STATUS_DESARROLLO || envioInfo.getEstatus().getId() == EnvioModel.STATUS_FINALIZADO) {
             obtenerUbicaciones(googleMap);
         }
+        if (new ReminderSession(getActivity()).getCargaContinuaStatus()) {
+            activarCargaContinua();
+        }
     }
 
     private void obtenerUbicaciones(final GoogleMap googleMap) {
@@ -180,7 +183,11 @@ public class FragmentUbicacion extends SupportMapFragment implements OnMapReadyC
                         googleMap.addPolyline(trayecto);
                         LatLngBounds.Builder builder = new LatLngBounds.Builder();
                         for (Marker marker : markers) {
-                            builder.include(marker.getPosition());
+                            String titleId = marker.getTitle();
+                            int id = tryParseInt(titleId);
+                            if (id < 0) {
+                                builder.include(marker.getPosition());
+                            }
                         }
                         LatLngBounds bounds = builder.build();
                         int padding = PADDING_MARKER; // offset from edges of the map in pixels

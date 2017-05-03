@@ -15,6 +15,7 @@ import com.google.gson.Gson;
  */
 public class ReminderSession {
 
+    private static final String NOMBRE_KEY_STATUS_CC = "carga_continua_key";
     Context context;
     private final String NOMBRE_SHARED_SESSION = "session_reminder_shared";
     private final String NOMBRE_KEY_SESSION = "session_key";
@@ -97,6 +98,19 @@ public class ReminderSession {
         Gson conversorJson = new Gson();
         String jsonSession = conversorJson.toJson(sessionInfo);
         editor.putString(NOMBRE_KEY_SESSION, jsonSession);
+        editor.apply();
+    }
+
+    public boolean getCargaContinuaStatus() {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(NOMBRE_SHARED_SESSION, Context.MODE_PRIVATE);
+        boolean status = sharedPreferences.getBoolean(NOMBRE_KEY_STATUS_CC, false);
+        return status;
+    }
+
+    public void setCargaContinuaStatus(boolean status) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(NOMBRE_SHARED_SESSION, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(NOMBRE_KEY_STATUS_CC, status);
         editor.apply();
     }
 

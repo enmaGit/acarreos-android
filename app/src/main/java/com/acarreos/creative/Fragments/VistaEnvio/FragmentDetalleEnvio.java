@@ -6,6 +6,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
@@ -104,13 +105,27 @@ public class FragmentDetalleEnvio extends Fragment {
 
         ctlLayout = (CollapsingToolbarLayout) getView().findViewById(R.id.ctlLayout);
         ctlLayout.setTitle(envioInfo.getTitle());
+        final ReminderSession reminderSession = new ReminderSession(getActivity());
 
-        SessionModel sessionInfo = new ReminderSession(getActivity()).obtenerInfoSession();
+        SessionModel sessionInfo = reminderSession.obtenerInfoSession();
         UserModel userActual = sessionInfo.getUser();
+
 
         btnActPos = (LinearLayout) getView().findViewById(R.id.btnActPos);
 
         btnActivarCargaCont = (FloatingActionButton) getView().findViewById(R.id.btnCargaContActive);
+
+        final boolean currentCargaContinuaStatus = reminderSession.getCargaContinuaStatus();
+
+        if (userActual.getTipo_user_id() == UserModel.TIPO_TRANSPORTISTA) {
+            btnActivarCargaCont.setVisibility(View.VISIBLE);
+        }
+
+        if (currentCargaContinuaStatus) {
+            btnActivarCargaCont.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.error_color)));
+        } else {
+            btnActivarCargaCont.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorAccent)));
+        }
 
         TabLayout tabLayout = (TabLayout) getView().findViewById(R.id.appbartabs);
 
@@ -165,6 +180,12 @@ public class FragmentDetalleEnvio extends Fragment {
                 btnActivarCargaCont.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        reminderSession.setCargaContinuaStatus(!reminderSession.getCargaContinuaStatus());
+                        if (reminderSession.getCargaContinuaStatus()) {
+                            btnActivarCargaCont.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.error_color)));
+                        } else {
+                            btnActivarCargaCont.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorAccent)));
+                        }
                         adaptadorDetalleEnvio.toggleCargaContinua();
                     }
                 });
