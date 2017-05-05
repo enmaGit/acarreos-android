@@ -24,7 +24,6 @@ import com.acarreos.creative.Models.UserModel;
 import com.acarreos.creative.PeticionesWeb.UserPeticiones;
 import com.acarreos.creative.R;
 import com.acarreos.creative.Util.ReminderSession;
-import com.google.gson.Gson;
 
 import java.io.IOException;
 

@@ -1,6 +1,5 @@
 package com.acarreos.creative.Services;
 
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -12,7 +11,6 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
-import android.util.Log;
 
 import com.acarreos.creative.Activities.BaseActivity;
 import com.acarreos.creative.Constants.AppConstants;

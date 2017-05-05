@@ -19,7 +19,6 @@ import android.view.ViewGroup;
 import com.acarreos.creative.Activities.BaseActivity;
 import com.acarreos.creative.Adapters.Fragment.PagerEnviosTransporAdapter;
 import com.acarreos.creative.Models.SessionModel;
-import com.acarreos.creative.Models.UserModel;
 import com.acarreos.creative.R;
 import com.acarreos.creative.Util.ReminderSession;
 
@@ -31,7 +30,6 @@ public class FragmentPrincipalTranspor extends Fragment implements SearchView.On
     private FloatingActionButton btnNuevoEnvio;
     private ViewPager viewPager;
     private CollapsingToolbarLayout ctlLayout;
-    private UserModel userInfo;
 
     PagerEnviosTransporAdapter adaptadorPagerEnvio;
 
@@ -56,7 +54,6 @@ public class FragmentPrincipalTranspor extends Fragment implements SearchView.On
 
         Log.d("Fragment", "Actividad created");
         SessionModel sessionInfo = new ReminderSession(getActivity()).obtenerInfoSession();
-        userInfo = sessionInfo.getUser();
         if (sessionInfo == null) {
             BaseActivity activity = (BaseActivity) getActivity();
             activity.abrirPantallaLogin();

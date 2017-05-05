@@ -1,9 +1,6 @@
 package com.acarreos.creative.Util;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
 
 import com.acarreos.creative.Models.SessionModel;

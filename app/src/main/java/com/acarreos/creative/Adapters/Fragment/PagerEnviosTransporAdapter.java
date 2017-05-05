@@ -6,19 +6,21 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.acarreos.creative.Fragments.Listas.FragmentListaEnvios;
-import com.acarreos.creative.Models.EnvioModel;
+import com.acarreos.creative.Fragments.MenuPrincipal.FragmentUbicacionEnvios;
 
 /**
  * Created by EnmanuelPc on 31/08/2015.
  */
 public class PagerEnviosTransporAdapter extends FragmentStatePagerAdapter {
 
-    FragmentListaEnvios fragmentEnviosSinOfertar;
-    FragmentListaEnvios fragmentEnviosOfertados;
+    private FragmentListaEnvios fragmentEnviosSinOfertar;
+    private FragmentListaEnvios fragmentEnviosOfertados;
+    private FragmentUbicacionEnvios fragmentUbicacionEnvios;
 
-    final int PAGE_COUNT = 2;
     private String tabTitles[] =
-            new String[]{"Envíos", "Ofertas"};
+            new String[]{"Envíos", "Mapa", "Ofertas"};
+
+    private final int PAGE_COUNT = tabTitles.length;
 
     public PagerEnviosTransporAdapter(FragmentManager fm) {
         super(fm);
@@ -33,6 +35,11 @@ public class PagerEnviosTransporAdapter extends FragmentStatePagerAdapter {
                 }
                 return fragmentEnviosSinOfertar;
             case 1:
+                if (fragmentUbicacionEnvios == null) {
+                    fragmentUbicacionEnvios = FragmentUbicacionEnvios.newInstance();
+                }
+                return fragmentUbicacionEnvios;
+            case 2:
                 if (fragmentEnviosOfertados == null) {
                     fragmentEnviosOfertados = FragmentListaEnvios.newInstance(FragmentListaEnvios.MODO_TRANS_OFERTADOS);
                 }
@@ -42,12 +49,8 @@ public class PagerEnviosTransporAdapter extends FragmentStatePagerAdapter {
     }
 
     @Override
-    public Parcelable saveState()
-    {
+    public Parcelable saveState() {
         return null;
-    }
-
-    public void addEnvio(EnvioModel envioInfo) {
     }
 
     @Override
