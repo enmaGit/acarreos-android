@@ -9,7 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.acarreos.creative.Activities.BaseActivity;
 import com.acarreos.creative.Constants.UrlsServer;
@@ -24,6 +26,8 @@ import com.acarreos.creative.Util.AuthRequestInterceptor;
 import com.acarreos.creative.Util.ReminderSession;
 import com.dd.ShadowLayout;
 import com.squareup.okhttp.OkHttpClient;
+import com.stripe.android.model.Card;
+import com.stripe.android.view.CardInputWidget;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -142,10 +146,30 @@ public class AdaptadorOfertasList extends RecyclerView.Adapter<AdaptadorOfertasL
                 btnAceptarOferta.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        guardarInformacionPago(context, ofertaInfo);
                         aceptarOfertaGanadora(context, ofertaInfo);
                     }
                 });
             }
+        }
+
+        private void guardarInformacionPago(final BaseActivity context, OfertasModel ofertaInfo) {
+            final Dialog dialog = new Dialog(context, android.R.style.Theme_Light);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setContentView(R.layout.dialog_payment_infor);
+            TextView btnProcesar = (TextView) dialog.findViewById(R.id.btnProcesor);
+            btnProcesar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    CardInputWidget mCardInputWidget = (CardInputWidget) dialog.findViewById(R.id.card_input_widget);
+                    Card cardToSave = mCardInputWidget.getCard();
+                    if (cardToSave == null) {
+                        Toast.makeText(context, "Invalid Card Data", Toast.LENGTH_SHORT).show();
+                    }
+                    dialog.dismiss();
+                }
+            });
+            dialog.show();
         }
 
         private void aceptarOfertaGanadora(BaseActivity context, final OfertasModel ofertaInfo) {
