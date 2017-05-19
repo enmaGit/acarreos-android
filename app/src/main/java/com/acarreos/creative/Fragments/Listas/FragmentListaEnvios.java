@@ -153,6 +153,7 @@ public class FragmentListaEnvios extends Fragment {
 
         RestAdapter.Builder builder = new RestAdapter.Builder()
                 .setEndpoint(UrlsServer.RUTA_SERVER)
+                .setLogLevel(RestAdapter.LogLevel.FULL)
                 .setClient(new OkClient(client));
 
         builder.setRequestInterceptor(new RequestInterceptor() {

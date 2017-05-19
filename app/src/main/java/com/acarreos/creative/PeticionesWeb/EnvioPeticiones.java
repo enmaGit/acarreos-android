@@ -5,6 +5,7 @@ import com.acarreos.creative.Models.EnvioModel;
 import com.acarreos.creative.Models.OfertasModel;
 import com.acarreos.creative.Models.ProductoEnvioModel;
 import com.acarreos.creative.Models.UbicacionModel;
+import com.stripe.android.model.Token;
 
 import java.util.List;
 
@@ -82,6 +83,6 @@ public interface EnvioPeticiones {
     void modificarOferta(@Path("id") int idEnvio, @Path("oferta_id") int idOferta, @Body OfertasModel ofertaInfo, Callback<OfertasModel> respuestaServidor);
 
     @POST(UrlsServer.ENVIO_GANADOR)
-    void definirEnvioGanador(@Path("id") int idEnvio, @Body Object o, Callback<Object> respuestaServidor);
+    void definirEnvioGanador(@Path("id") int idEnvio, @Body Token token, Callback<Object> respuestaServidor);
 
 }

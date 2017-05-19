@@ -3,6 +3,7 @@ package com.acarreos.creative.Adapters.RecyclerView;
 import android.app.Dialog;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -26,7 +27,10 @@ import com.acarreos.creative.Util.AuthRequestInterceptor;
 import com.acarreos.creative.Util.ReminderSession;
 import com.dd.ShadowLayout;
 import com.squareup.okhttp.OkHttpClient;
+import com.stripe.android.Stripe;
+import com.stripe.android.TokenCallback;
 import com.stripe.android.model.Card;
+import com.stripe.android.model.Token;
 import com.stripe.android.view.CardInputWidget;
 
 import java.text.ParseException;
@@ -94,6 +98,7 @@ public class AdaptadorOfertasList extends RecyclerView.Adapter<AdaptadorOfertasL
 
     public static class OfertaViewHolder extends RecyclerView.ViewHolder {
 
+        private static final String STRIPE_API_KEY = "pk_test_QGB4qqY7Qz3nIxae1pO9Vr7T";
         TextView txtTransLogin;
         ShadowLayout btnAceptarOferta;
         TextView fechaPuja;
@@ -147,16 +152,27 @@ public class AdaptadorOfertasList extends RecyclerView.Adapter<AdaptadorOfertasL
                     @Override
                     public void onClick(View v) {
                         guardarInformacionPago(context, ofertaInfo);
-                        aceptarOfertaGanadora(context, ofertaInfo);
                     }
                 });
             }
         }
 
-        private void guardarInformacionPago(final BaseActivity context, OfertasModel ofertaInfo) {
+        private void guardarInformacionPago(final BaseActivity context, final OfertasModel ofertaInfo) {
             final Dialog dialog = new Dialog(context, android.R.style.Theme_Light);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
             dialog.setContentView(R.layout.dialog_payment_infor);
+            final TextInputLayout textInputNombre = (TextInputLayout) dialog.findViewById(R.id.tilNombre);
+            textInputNombre.setErrorEnabled(true);
+            final EditText editNombre = (EditText) dialog.findViewById(R.id.textNombre);
+            final TextInputLayout textInputAddress = (TextInputLayout) dialog.findViewById(R.id.tilAddress);
+            textInputAddress.setErrorEnabled(true);
+            final EditText editAddress = (EditText) dialog.findViewById(R.id.textAddress);
+            final TextInputLayout textInputAddress2 = (TextInputLayout) dialog.findViewById(R.id.tilAddress2);
+            textInputAddress2.setErrorEnabled(true);
+            final EditText editAddress2 = (EditText) dialog.findViewById(R.id.textAddress2);
+            final TextInputLayout textInputZipCode = (TextInputLayout) dialog.findViewById(R.id.tilZipCode);
+            textInputZipCode.setErrorEnabled(true);
+            final EditText editZipCode = (EditText) dialog.findViewById(R.id.textZipCode);
             TextView btnProcesar = (TextView) dialog.findViewById(R.id.btnProcesor);
             btnProcesar.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -165,19 +181,46 @@ public class AdaptadorOfertasList extends RecyclerView.Adapter<AdaptadorOfertasL
                     Card cardToSave = mCardInputWidget.getCard();
                     if (cardToSave == null) {
                         Toast.makeText(context, "Invalid Card Data", Toast.LENGTH_SHORT).show();
+                    } else {
+                        cardToSave.setName(editNombre.getText().toString().trim());
+                        cardToSave.setAddressLine1(editAddress.getText().toString().trim());
+                        cardToSave.setAddressLine2(editAddress2.getText().toString().trim());
+                        cardToSave.setAddressZip(editZipCode.getText().toString().trim());
+                        if (cardToSave.validateCard()) {
+                            Toast.makeText(context, "Todo paso bien", Toast.LENGTH_SHORT).show();
+                            dialog.dismiss();
+                            obtenerTokenStripe(context, ofertaInfo, cardToSave);
+                        } else {
+                            Toast.makeText(context, "Invalid Card Data 2", Toast.LENGTH_SHORT).show();
+                        }
                     }
-                    dialog.dismiss();
                 }
             });
             dialog.show();
         }
 
-        private void aceptarOfertaGanadora(BaseActivity context, final OfertasModel ofertaInfo) {
+        private void obtenerTokenStripe(final BaseActivity context, final OfertasModel ofertaInfo, Card cardToSave) {
             final Dialog dialogLoading = new Dialog(context, R.style.Theme_Dialog_Translucent);
             dialogLoading.requestWindowFeature(Window.FEATURE_NO_TITLE);
             dialogLoading.setContentView(R.layout.dialog_loading);
             dialogLoading.setCancelable(false);
             dialogLoading.show();
+            Stripe stripe = new Stripe(context, STRIPE_API_KEY);
+            stripe.createToken(cardToSave, new TokenCallback() {
+                @Override
+                public void onError(Exception error) {
+                    Toast.makeText(context, "Problemas con Stripe", Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onSuccess(Token token) {
+                    Toast.makeText(context, "Este es el token: " + token, Toast.LENGTH_SHORT).show();
+                    aceptarOfertaGanadora(context, ofertaInfo, token, dialogLoading);
+                }
+            });
+        }
+
+        private void aceptarOfertaGanadora(BaseActivity context, final OfertasModel ofertaInfo, Token stripeToken, final Dialog dialogLoading) {
             SessionModel sessionInfo = new ReminderSession(context).obtenerInfoSession();
             final String token = sessionInfo.getToken();
 
@@ -206,7 +249,7 @@ public class AdaptadorOfertasList extends RecyclerView.Adapter<AdaptadorOfertasL
 
             RestAdapter adapter = builder.build();
             EnvioPeticiones servicioEnvios = adapter.create(EnvioPeticiones.class);
-            servicioEnvios.definirEnvioGanador(ofertaInfo.idEnvio, new Object(), new Callback<Object>() {
+            servicioEnvios.definirEnvioGanador(ofertaInfo.idEnvio, stripeToken, new Callback<Object>() {
 
                 @Override
                 public void success(Object o, Response response) {

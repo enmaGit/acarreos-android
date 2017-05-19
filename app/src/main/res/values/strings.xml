@@ -67,4 +67,8 @@
     <string name="tipo_licencia">Tipo de Licencia</string>
     <string name="dni">Documento de identidad</string>
     <string name="licencia">Licencia</string>
+    <string name="int_payment_sata">Por favor introduce tus datos de pago:</string>
+    <string name="address">Dirección</string>
+    <string name="zip_code">Código Postal</string>
+    <string name="address_2">Dirección 2</string>
 </resources>

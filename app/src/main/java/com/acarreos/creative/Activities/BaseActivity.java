@@ -103,8 +103,9 @@ public class BaseActivity extends AppCompatActivity {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mNavigator = new Navigator(getSupportFragmentManager(), R.id.content_frame);
         navigationDrawer = (NavigationView) findViewById(R.id.navigation_drawer);
-        txtNombreUsuario = (TextView) findViewById(R.id.nombreUser);
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
+        View headerVew = navigationDrawer.getHeaderView(0);
+        txtNombreUsuario = (TextView) headerVew.findViewById(R.id.nombreUser);
+        mDrawerLayout.addDrawerListener(mDrawerToggle);
         ReminderSession reminderSession = new ReminderSession(BaseActivity.this);
         if (reminderSession.obtenerInfoSession() != null) {
             mCurrentMenuItem = R.id.item_ver_envios;
@@ -379,7 +380,9 @@ public class BaseActivity extends AppCompatActivity {
             //mNavigator.clearHistory();
             mCurrentMenuItem = R.id.cerrar_sesion;
             mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+            Log.e("Login", "Esto paso 1");
             mNavigator.setRootFragment(FragmentLogin.newInstance());
+            Log.e("Login", "Esto paso 2");
         }
     }
 

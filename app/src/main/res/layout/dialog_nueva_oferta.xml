@@ -29,11 +29,41 @@
 
     </RelativeLayout>
 
+    <LinearLayout
+        android:id="@+id/footerNuevoEnvio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <com.acarreos.creative.CustomViews.RobotoTextView
+            android:id="@+id/btnCancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:text="@string/cancelar"
+            android:textColor="@color/colorAccent"
+            android:textSize="15sp" />
+
+        <com.acarreos.creative.CustomViews.RobotoTextView
+            android:id="@+id/btnGuardar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/guardar"
+            android:textColor="@color/primary_color"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/headerDialog"
         android:layout_above="@+id/footerNuevoEnvio"
-        android:layout_below="@id/headerDialog">
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -293,33 +323,5 @@
 
 
     </ScrollView>
-
-    <LinearLayout
-        android:id="@id/footerNuevoEnvio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
-
-        <com.acarreos.creative.CustomViews.RobotoTextView
-            android:id="@+id/btnCancelar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:text="@string/cancelar"
-            android:textColor="@color/colorAccent"
-            android:textSize="15sp" />
-
-        <com.acarreos.creative.CustomViews.RobotoTextView
-            android:id="@+id/btnGuardar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/guardar"
-            android:textColor="@color/primary_color"
-            android:textSize="15sp" />
-
-    </LinearLayout>
 
 </RelativeLayout>
