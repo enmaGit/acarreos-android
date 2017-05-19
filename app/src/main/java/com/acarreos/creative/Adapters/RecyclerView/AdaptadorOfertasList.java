@@ -120,7 +120,7 @@ public class AdaptadorOfertasList extends RecyclerView.Adapter<AdaptadorOfertasL
             horaLlegada = (TextView) itemView.findViewById(R.id.horaLlegada);
         }
 
-        public void bindOferta(final BaseActivity context, final OfertasModel ofertaInfo, EnvioModel envioInfo) {
+        public void bindOferta(final BaseActivity context, final OfertasModel ofertaInfo, final EnvioModel envioInfo) {
             txtTransLogin.setText(ofertaInfo.getTransportista().getLogin());
             txtTransLogin.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -151,16 +151,25 @@ public class AdaptadorOfertasList extends RecyclerView.Adapter<AdaptadorOfertasL
                 btnAceptarOferta.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        guardarInformacionPago(context, ofertaInfo);
+                        guardarInformacionPago(context, ofertaInfo, envioInfo);
                     }
                 });
             }
         }
 
-        private void guardarInformacionPago(final BaseActivity context, final OfertasModel ofertaInfo) {
+        private void guardarInformacionPago(final BaseActivity context, final OfertasModel ofertaInfo, EnvioModel envioInfo) {
             final Dialog dialog = new Dialog(context, android.R.style.Theme_Light);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
             dialog.setContentView(R.layout.dialog_payment_infor);
+            TextView txtPrecioEnvio = (TextView) dialog.findViewById(R.id.precioEnvio);
+            TextView txtComisionEnvio = (TextView) dialog.findViewById(R.id.comisionEnvio);
+            TextView txtTotalPrice = (TextView) dialog.findViewById(R.id.totalPrice);
+            float comision = envioInfo.getComisionFinal() / 100f;
+            float added = ofertaInfo.getPrecioPuja() * comision;
+            float totalPrice = ofertaInfo.getPrecioPuja() + added;
+            txtPrecioEnvio.setText(ofertaInfo.getPrecioPuja() + "$");
+            txtComisionEnvio.setText(added + "$");
+            txtTotalPrice.setText(totalPrice + "$");
             final TextInputLayout textInputNombre = (TextInputLayout) dialog.findViewById(R.id.tilNombre);
             textInputNombre.setErrorEnabled(true);
             final EditText editNombre = (EditText) dialog.findViewById(R.id.textNombre);

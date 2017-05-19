@@ -71,4 +71,5 @@
     <string name="address">Dirección</string>
     <string name="zip_code">Código Postal</string>
     <string name="address_2">Dirección 2</string>
+    <string name="factura">Factura</string>
 </resources>
