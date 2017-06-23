@@ -165,26 +165,28 @@ public class FragmentUbicacionEnvios extends SupportMapFragment implements OnMap
     private void addMarkerEnvio(EnvioModel envioInfo) {
         if (googleMapFragment != null) {
             SessionModel sessionInfo = new ReminderSession(getActivity()).obtenerInfoSession();
-            if (envioInfo.haOfertado(sessionInfo.getUser())) {
-                LatLng origen = new LatLng(envioInfo.lat_origen, envioInfo.lon_origen);
-                LatLng destino = new LatLng(envioInfo.lat_destino, envioInfo.lon_destino);
-                markers.add(googleMapFragment.addMarker(
-                        new MarkerOptions()
-                                .position(origen)
-                                .title(envioInfo.getId() + "")
-                                .icon(BitmapDescriptorFactory.defaultMarker(COLOR_VERDE))));
-                markers.add(googleMapFragment.addMarker(
-                        new MarkerOptions()
-                                .position(destino)
-                                .title(envioInfo.getId() + "")
-                                .icon(BitmapDescriptorFactory.defaultMarker(COLOR_AZUL))));
-            } else {
-                LatLng origen = new LatLng(envioInfo.lat_origen, envioInfo.lon_origen);
-                markers.add(googleMapFragment.addMarker(
-                        new MarkerOptions()
-                                .position(origen)
-                                .title(envioInfo.getId() + "")
-                                .icon(BitmapDescriptorFactory.defaultMarker(COLOR_PURPURA))));
+            if (getActivity() != null) {
+                if (envioInfo.haOfertado(sessionInfo.getUser())) {
+                    LatLng origen = new LatLng(envioInfo.lat_origen, envioInfo.lon_origen);
+                    LatLng destino = new LatLng(envioInfo.lat_destino, envioInfo.lon_destino);
+                    markers.add(googleMapFragment.addMarker(
+                            new MarkerOptions()
+                                    .position(origen)
+                                    .title(envioInfo.getId() + "")
+                                    .icon(BitmapDescriptorFactory.defaultMarker(COLOR_VERDE))));
+                    markers.add(googleMapFragment.addMarker(
+                            new MarkerOptions()
+                                    .position(destino)
+                                    .title(envioInfo.getId() + "")
+                                    .icon(BitmapDescriptorFactory.defaultMarker(COLOR_AZUL))));
+                } else {
+                    LatLng origen = new LatLng(envioInfo.lat_origen, envioInfo.lon_origen);
+                    markers.add(googleMapFragment.addMarker(
+                            new MarkerOptions()
+                                    .position(origen)
+                                    .title(envioInfo.getId() + "")
+                                    .icon(BitmapDescriptorFactory.defaultMarker(COLOR_PURPURA))));
+                }
             }
         }
     }

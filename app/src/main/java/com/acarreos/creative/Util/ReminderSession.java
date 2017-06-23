@@ -64,14 +64,17 @@ public class ReminderSession {
     }
 
     public SessionModel obtenerInfoSession() {
-        SharedPreferences sharedPreferences = context.getSharedPreferences(NOMBRE_SHARED_SESSION, Context.MODE_PRIVATE);
-        String jsonSession = sharedPreferences.getString(NOMBRE_KEY_SESSION, " ");
-        if (jsonSession.compareTo(" ") == 0) {
-            return null;
+        if (context != null){
+            SharedPreferences sharedPreferences = context.getSharedPreferences(NOMBRE_SHARED_SESSION, Context.MODE_PRIVATE);
+            String jsonSession = sharedPreferences.getString(NOMBRE_KEY_SESSION, " ");
+            if (jsonSession.compareTo(" ") == 0) {
+                return null;
+            }
+            Gson conversorJson = new Gson();
+            SessionModel sessionInfo = conversorJson.fromJson(jsonSession, SessionModel.class);
+            return sessionInfo;
         }
-        Gson conversorJson = new Gson();
-        SessionModel sessionInfo = conversorJson.fromJson(jsonSession, SessionModel.class);
-        return sessionInfo;
+        return null;
     }
 
     public String obtenerIdPush() {

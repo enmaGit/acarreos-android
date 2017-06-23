@@ -1,0 +1,116 @@
+{
+  "project_info": {
+    "project_number": "140209187753",
+    "firebase_url": "https://mapas-api-v2-1061.firebaseio.com",
+    "project_id": "mapas-api-v2-1061",
+    "storage_bucket": "mapas-api-v2-1061.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:140209187753:android:79e34822ffc77cd9",
+        "android_client_info": {
+          "package_name": "com.acarreos.creative"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "140209187753-h1s9p9v3osr3bvg8cnkgko1tlk1hp133.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "140209187753-ukgjoihlrjdr6gkgg415nvn8atpr94j8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv1wh-4fPDZTo0ugxRpEcfIbwyyUZkInY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:140209187753:android:dfd3ce2cd842ffc8",
+        "android_client_info": {
+          "package_name": "com.acarreos.cliente"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "140209187753-h1s9p9v3osr3bvg8cnkgko1tlk1hp133.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "140209187753-ukgjoihlrjdr6gkgg415nvn8atpr94j8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv1wh-4fPDZTo0ugxRpEcfIbwyyUZkInY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:140209187753:android:9400d00e43c6671c",
+        "android_client_info": {
+          "package_name": "com.acarreos.transpor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "140209187753-h1s9p9v3osr3bvg8cnkgko1tlk1hp133.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "140209187753-ukgjoihlrjdr6gkgg415nvn8atpr94j8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv1wh-4fPDZTo0ugxRpEcfIbwyyUZkInY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

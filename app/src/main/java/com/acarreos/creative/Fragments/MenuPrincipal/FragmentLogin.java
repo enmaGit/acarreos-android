@@ -33,6 +33,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.acarreos.creative.Activities.BaseActivity;
+import com.acarreos.creative.BuildConfig;
+import com.acarreos.creative.Constants.AppConstants;
 import com.acarreos.creative.Constants.ServerConstants;
 import com.acarreos.creative.Constants.UrlsServer;
 import com.acarreos.creative.CustomViews.RadioButtonMaterial;
@@ -96,6 +98,9 @@ public class FragmentLogin extends Fragment {
         btnLogin = (RelativeLayout) getView().findViewById(R.id.btnLogin);
         btnForgotPass = (TextView) getView().findViewById(R.id.btnPassForget);
         btnRegister = (FloatingActionButton) getView().findViewById(R.id.btnRegister);
+        if (BuildConfig.FLAVOR.equalsIgnoreCase(AppConstants.FLAVOR_TRANSPOR)) {
+            btnRegister.setVisibility(View.GONE);
+        }
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -218,6 +223,9 @@ public class FragmentLogin extends Fragment {
         final Dialog dialog = new Dialog(getActivity(), android.R.style.Theme_Light);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.dialog_register_usuario);
+
+        View radioGroup = dialog.findViewById(R.id.groupRadio);
+
         final EditText textFecNac = (EditText) dialog.findViewById(R.id.textFecNac);
         final EditText textLogin = (EditText) dialog.findViewById(R.id.textLogin);
         final TextInputLayout textInputLogin = (TextInputLayout) dialog.findViewById(R.id.tilLogin);
@@ -461,20 +469,32 @@ public class FragmentLogin extends Fragment {
                                                     if (reminderSession.obtenerIdPush() != null) {
                                                         userInfo.setIdPush(new ReminderSession(getActivity()).obtenerIdPush());
                                                     }
-                                                    if (rbtOpcCli.isChecked()) {
+                                                    if (BuildConfig.FLAVOR.equalsIgnoreCase(AppConstants.FLAVOR_CLIENT)) {
                                                         userInfo.setTipo_user_id(UserModel.TIPO_CLIENTE);
                                                     } else {
-                                                        userInfo.setTipoDni(spinnerTipoDni.getSelectedItemPosition());
-                                                        userInfo.setDni(textDni.getText().toString().trim());
-                                                        userInfo.setTipoLicencia(((String) spinnerTipoLicencia.getSelectedItem()).trim());
-                                                        userInfo.setNumSeguridad(textNumSeguridad.getText().toString());
-                                                        userInfo.setTipo_user_id(UserModel.TIPO_TRANSPORTISTA);
+                                                        if (rbtOpcCli.isChecked()) {
+                                                            userInfo.setTipo_user_id(UserModel.TIPO_CLIENTE);
+                                                        } else {
+                                                            userInfo.setTipoDni(spinnerTipoDni.getSelectedItemPosition());
+                                                            userInfo.setDni(textDni.getText().toString().trim());
+                                                            userInfo.setTipoLicencia(((String) spinnerTipoLicencia.getSelectedItem()).trim());
+                                                            userInfo.setNumSeguridad(textNumSeguridad.getText().toString());
+                                                            userInfo.setTipo_user_id(UserModel.TIPO_TRANSPORTISTA);
+                                                        }
                                                     }
                                                     registrarUsuario(userInfo, dialog);
                                                 }
                                             }
                                         }
         );
+
+        if (!BuildConfig.FLAVOR.equalsIgnoreCase(AppConstants.FLAVOR_ADMIN)) {
+            radioGroup.setVisibility(View.GONE);
+            dialog.findViewById(R.id.layoutDni).setVisibility(View.GONE);
+            dialog.findViewById(R.id.layoutDniType).setVisibility(View.GONE);
+            dialog.findViewById(R.id.layoutSecurityNumber).setVisibility(View.GONE);
+            dialog.findViewById(R.id.layoutTipoLicencia).setVisibility(View.GONE);
+        }
         dialog.show();
     }
 
@@ -488,6 +508,7 @@ public class FragmentLogin extends Fragment {
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setEndpoint(UrlsServer.RUTA_SERVER)
                 .build();
+
 
         UserPeticiones servicioRegistroUser = restAdapter.create(UserPeticiones.class);
 
@@ -559,11 +580,21 @@ public class FragmentLogin extends Fragment {
         servicioIniciarSesion.iniciarSession(requestLoginInfo, new Callback<SessionModel>() {
             @Override
             public void success(SessionModel sessionModel, Response response) {
+                boolean isValid = true;
+                if (BuildConfig.FLAVOR.equalsIgnoreCase(AppConstants.FLAVOR_CLIENT)) {
+                    isValid = sessionModel.getUser().getTipo_user_id() == UserModel.TIPO_CLIENTE;
+                } else if (BuildConfig.FLAVOR.equalsIgnoreCase(AppConstants.FLAVOR_TRANSPOR)) {
+                    isValid = sessionModel.getUser().getTipo_user_id() == UserModel.TIPO_TRANSPORTISTA;
+                }
                 screenLoading.setVisibility(View.GONE);
-                ReminderSession reminderSession = new ReminderSession(context);
-                reminderSession.guardarSession(sessionModel);
-                activarAlarma(context);
-                context.ingresar(sessionModel.getUser());
+                if (isValid) {
+                    ReminderSession reminderSession = new ReminderSession(context);
+                    reminderSession.guardarSession(sessionModel);
+                    activarAlarma(context);
+                    context.ingresar(sessionModel.getUser());
+                } else {
+                    Snackbar.make(btnLogin, "Usuario inválido", Snackbar.LENGTH_LONG).show();
+                }
             }
 
             @Override

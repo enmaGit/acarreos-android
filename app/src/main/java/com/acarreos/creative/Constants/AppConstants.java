@@ -13,4 +13,8 @@ public class AppConstants {
     public static final String NOTIF_ACT_UBICACION = "4";
     public static final String NOTIF_SPAM = "5";
     public static final String NOTIF_ENVIO_CANCELADO = "6";
+
+    public static final String FLAVOR_CLIENT = "cliente";
+    public static final String FLAVOR_ADMIN = "admin";
+    public static final String FLAVOR_TRANSPOR = "transpor";
 }
