@@ -2,9 +2,22 @@ apply plugin: 'com.android.application'
 
 
 android {
+    signingConfigs {
+        transpor {
+            keyAlias 'Acarreos'
+            keyPassword 'AcPaComTr#1'
+            storeFile file('C:/Users/Eduim Serra/Desktop/Documentos acarreos/Apk\'s Acarreos/Transportista/key_acarreos_trans.jks')
+            storePassword 'AcPaComTr#1'
+        }
+        client {
+            keyAlias 'Acrreos'
+            keyPassword 'AcPaComTr#1'
+            storeFile file('C:/Users/Eduim Serra/Desktop/Documentos acarreos/Apk\'s Acarreos/Cliente/key_acarreos_cliente.jks')
+            storePassword 'AcPaComTr#1'
+        }
+    }
     compileSdkVersion 24
     buildToolsVersion '25.0.0'
-
     defaultConfig {
         applicationId "com.acarreos.creative"
         minSdkVersion 14
@@ -19,26 +32,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
     dexOptions {
         incremental true
         javaMaxHeapSize "4g"
     }
-
     productFlavors {
         admin {
             applicationId 'com.acarreos.creative'
         }
-
         cliente {
             applicationId 'com.acarreos.cliente'
+            signingConfig signingConfigs.client
         }
-
         transpor {
             applicationId 'com.acarreos.transpor'
+            signingConfig signingConfigs.transpor
         }
     }
-
     repositories {
         maven {
             url "https://mint.splunk.com/gradle/"
